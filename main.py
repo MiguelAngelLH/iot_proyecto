@@ -32,6 +32,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+async def read_root():
+    """Welcome message."""
+    return {"message": "Bienvenido a mi api de iot!"}
 
 @app.get("/dispositivos")
 async def obtener_dispositivos():
