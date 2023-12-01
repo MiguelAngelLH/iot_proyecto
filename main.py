@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 
 # Crea la base de datos
-conn = sqlite3.connect("dispositivos.db")
+conn = sqlite3.connect("sql/iot.db")
 
 app = fastapi.FastAPI()
 
@@ -20,7 +20,7 @@ class Dispositivo(BaseModel):
 origins = [
     "http://localhost:8080",
     "http://127.0.0.1:5000",
-    ##"https://backend-iot-9945b3a20353.herokuapp.com/dispositivos"
+   
 ]
 
 # Cors
